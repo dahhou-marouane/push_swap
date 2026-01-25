@@ -1,0 +1,92 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parcing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/25 02:49:46 by mdahhou           #+#    #+#             */
+/*   Updated: 2026/01/25 06:19:24 by mdahhou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+size_t	ft_strlen(char *s)
+{
+	size_t	len;
+
+	len = 0;
+	if (!s)
+		ft_error();
+	while (s[len])
+		len++;
+	return (len);
+}
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+
+void	ft_spacestr(char *av)
+{
+	int		i;
+	size_t	j;
+
+	j = 0;
+	i = 0;
+	while (av[i])
+	{
+		if (av[i] == ' ')
+			j++;
+		i++;
+	}
+	if (j == ft_strlen(av))
+		ft_error();
+}
+
+void	ft_emptystr(char *av)
+{
+	if (!av || av[0] == '\0')
+		ft_error();
+}
+int	ft_validstr(char *av)
+{
+	int	i;
+
+	i = 0;
+	while (av[i])
+	{
+		while (av[i] == ' ')
+			i++;
+		if(av[i] == '\0')
+			break;
+		if (av[i] == '-' || av[i] == '+')
+			i++;
+		if(!ft_isdigit(av[i]))
+			return 0;
+		while (ft_isdigit(av[i]))
+			i++;
+		if (av[i] != ' ' && av[i] != '\0')
+			return 0;
+	}
+	return 1;
+}
+
+void	ft_parsing(int ac, char **av)
+{
+	int	j;
+
+	j = 1;
+	while (j < ac)
+	{
+		ft_emptystr(av[j]);
+		ft_spacestr(av[j]);
+		if(!ft_validstr(av[j]))
+			ft_error();
+		j++;
+	}
+}
