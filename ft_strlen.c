@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/25 02:31:57 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/01/26 22:36:26 by mdahhou          ###   ########.fr       */
+/*   Created: 2026/01/26 20:56:33 by mdahhou           #+#    #+#             */
+/*   Updated: 2026/01/26 22:19:14 by mdahhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+size_t	ft_strlen(char *s)
 {
-	if (ac == 1)
-		return (0);
-	
-	printf("{%s}\n", ft_parsing(ac, av));
+	size_t	len;
 
+	len = 0;
+	if (!s)
+		return (0);
+	while (s[len])
+		len++;
+	return (len);
 }
