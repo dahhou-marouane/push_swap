@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 00:16:11 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/01/26 22:33:25 by mdahhou          ###   ########.fr       */
+/*   Updated: 2026/01/27 02:28:44 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,20 @@ static void	ft_cat(char *p, char *s)
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*p;
+	size_t	len1;
+	size_t	len2;
 
-	p = malloc(ft_strlen(s1) + ft_strlen(s2) + 2);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	p = malloc(len1 + len2 + 2);
 	if (!p)
-		return (NULL);
+		ft_error();
 	ft_cat(p, s1);
 	if (s1)
-		p[ft_strlen(p)]= ' ';
+		{
+			p[len1] = ' ';
+			p[len1 + 1] = '\0';
+		}
 	ft_cat(p + ft_strlen(p), s2);
 	if (s1)
 		free(s1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 02:53:26 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/01/26 22:32:59 by mdahhou          ###   ########.fr       */
+/*   Updated: 2026/01/27 03:54:55 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct s_stack
 {
@@ -26,7 +27,9 @@ typedef struct s_stack
 
 void	ft_emptystr(char *av);
 int		ft_validstr(char *av);
-char	*ft_parsing(int ac, char **av);
+void	*ft_freei(char **a, size_t i);
+char	**ft_split(char *s, char c);
+char	**ft_parsing(int ac, char **av);
 void	ft_spacestr(char *av);
 void	ft_error(void);
 int		ft_isdigit(int c);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 21:58:42 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/01/26 22:41:44 by mdahhou          ###   ########.fr       */
+/*   Updated: 2026/01/27 01:21:45 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static char	*ft_aloword(char *s, char c)
 	return (word);
 }
 
-static void	*ft_freei(char **a, size_t i)
+void	*ft_freei(char **a, size_t i)
 {
 	size_t	j;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 02:31:57 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/01/26 22:36:26 by mdahhou          ###   ########.fr       */
+/*   Updated: 2026/01/27 03:36:22 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,14 @@ int	main(int ac, char **av)
 {
 	if (ac == 1)
 		return (0);
-	
-	printf("{%s}\n", ft_parsing(ac, av));
+	int j = 0;
+	char **s = ft_parsing(ac, av);
+	while (j < ac)
+	{
+		printf("{%s}\n", s[j]);
+		j++;
+	}
+	ft_freei(s, j);
+	return 0;
 
 }

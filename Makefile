@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+         #
+#    By: one <one@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/25 02:53:28 by mdahhou           #+#    #+#              #
-#    Updated: 2026/01/26 22:33:14 by mdahhou          ###   ########.fr        #
+#    Updated: 2026/01/27 01:14:54 by one              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CFLAGS = -g -Wall -Wextra -Werror
-FILES = ft_error.c main.c parcing.c ft_strlen.c ft_strjoin.c
+FILES = ft_error.c main.c parcing.c ft_strlen.c ft_strjoin.c ft_split.c
 
 OBJ = $(FILES:.c=.o)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parcing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 02:49:46 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/01/26 22:36:08 by mdahhou          ###   ########.fr       */
+/*   Updated: 2026/01/27 04:15:42 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,11 @@ int	ft_validstr(char *av)
 	return (1);
 }
 
-char	*ft_parsing(int ac, char **av)
+char	**ft_parsing(int ac, char **av)
 {
 	int		j;
 	char	*alln;
+	char	**arn;
 
 	j = 1;
 	alln = NULL;
@@ -78,8 +79,15 @@ char	*ft_parsing(int ac, char **av)
 		ft_spacestr(av[j]);
 		if (!ft_validstr(av[j]))
 			ft_error();
+		j++;
+	}
+	j = 1;
+	while (j < ac)
+	{
 		alln = ft_strjoin(alln, av[j]);
 		j++;
 	}
-	return (alln);
+	arn = ft_split(alln, ' ');
+	free(alln);
+	return (arn);
 }
