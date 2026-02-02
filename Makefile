@@ -12,7 +12,7 @@
 
 NAME = push_swap
 CFLAGS = -g -Wall -Wextra -Werror
-FILES = ft_error.c main.c parcing.c ft_strlen.c ft_strjoin.c ft_split.c
+FILES = ft_error.c main.c parcing.c ft_strlen.c ft_strjoin.c ft_split.c ft_atoi.c stack_utils.c
 
 OBJ = $(FILES:.c=.o)
 

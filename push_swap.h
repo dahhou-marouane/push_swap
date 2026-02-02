@@ -35,6 +35,13 @@ void	ft_error(void);
 int		ft_isdigit(int c);
 size_t	ft_strlen(char *s);
 char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strjoin(char *s1, char *s2);
+int		ft_atoi(char *str);
+
+// Stack functions
+t_stack	*ft_new_node(int n);
+void	ft_add_back(t_stack **stack, t_stack *new);
+t_stack	*ft_fill_stack(char **arn);
+void	ft_free_stack(t_stack **stack);
+int		ft_has_duplicate(t_stack *stack);
 
 #endif
