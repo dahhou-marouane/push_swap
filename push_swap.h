@@ -6,7 +6,7 @@
 /*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 02:53:26 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/01/27 03:54:55 by one              ###   ########.fr       */
+/*   Updated: 2026/02/03 12:04:34 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct s_stack
 
 void	ft_emptystr(char *av);
 int		ft_validstr(char *av);
-void	*ft_freei(char **a, size_t i);
 char	**ft_split(char *s, char c);
 char	**ft_parsing(int ac, char **av);
 void	ft_spacestr(char *av);

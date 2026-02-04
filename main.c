@@ -6,13 +6,13 @@
 /*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 02:31:57 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/01/27 03:36:22 by one              ###   ########.fr       */
+/*   Updated: 2026/02/04 10:21:03 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_free_split(char **arr)
+static void	 ft_free_split(char **arr)
 {
 	int	i;
 
@@ -29,6 +29,7 @@ int	main(int ac, char **av)
 {
 	char	**arn;
 	t_stack	*stack_a;
+	// t_stack	*stack_b;
 	t_stack	*tmp;
 
 	if (ac == 1)

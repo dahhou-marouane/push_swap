@@ -6,7 +6,7 @@
 /*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 21:58:42 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/01/27 01:21:45 by one              ###   ########.fr       */
+/*   Updated: 2026/02/03 06:30:39 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static char	*ft_aloword(char *s, char c)
 	return (word);
 }
 
-void	*ft_freei(char **a, size_t i)
+static void	ft_freei(char **a, size_t i)
 {
 	size_t	j;
 
@@ -70,7 +70,7 @@ void	*ft_freei(char **a, size_t i)
 	while (j < i)
 		free(a[j++]);
 	free(a);
-	return (NULL);
+	ft_error();
 }
 
 char	**ft_split(char *s, char c)
@@ -92,7 +92,7 @@ char	**ft_split(char *s, char c)
 			j++;
 		a[i] = ft_aloword(s + j, c);
 		if (!a[i])
-			return (ft_freei(a, i));
+			ft_freei(a, i);
 		j += ft_strlen(a[i]);
 		i++;
 	}
