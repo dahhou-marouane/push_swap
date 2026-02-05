@@ -26,7 +26,7 @@ static int	ft_sign(char *str, int *i)
 	return (sign);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(char *str, int *error)
 {
 	int			i;
 	long long	res;
@@ -40,13 +40,10 @@ int	ft_atoi(char *str)
 	sign = ft_sign((char *)str, &i);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (res > INT_MAX / 10 || (res == INT_MAX / 10
-				&& (str[i] - '0') > INT_MAX % 10))
+		if (res > INT_MAX / 10 || (res == INT_MAX / 10 && (str[i] - '0') > INT_MAX % 10))
 		{
-			if (sign == 1)
-				ft_error();
-			else if (str[i] - '0' > (INT_MAX % 10) + 1)
-				ft_error();
+			if (sign == 1 || (sign == -1 && str[i] - '0' > (INT_MAX % 10) + 1))
+				*error = 1;
 		}
 		res = res * 10 + (str[i] - '0');
 		i++;

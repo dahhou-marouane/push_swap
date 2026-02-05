@@ -6,14 +6,15 @@
 #    By: one <one@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/25 02:53:28 by mdahhou           #+#    #+#              #
-#    Updated: 2026/02/03 06:26:21 by one              ###   ########.fr        #
+#    Updated: 2026/02/05 16:00:05 by one              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CFLAGS = -g -Wall -Wextra -Werror
-FILES = ft_error.c main.c parcing.c ft_strlen.c ft_strjoin.c ft_split.c ft_atoi.c stack_utils.c
-
+FILES = ft_error.c main.c parcing.c ft_strlen.c ft_strjoin.c \
+			ft_split.c ft_atoi.c ft_stack_utils.c ft_swap.c ft_rotate.c \
+			ft_r_rotate.c ft_push.c
 OBJ = $(FILES:.c=.o)
 
 all : $(NAME)

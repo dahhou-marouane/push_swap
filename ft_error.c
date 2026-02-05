@@ -6,7 +6,7 @@
 /*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 16:13:08 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/03 06:23:00 by one              ###   ########.fr       */
+/*   Updated: 2026/02/04 22:49:25 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,11 @@
 void	ft_error(void)
 {
 	write(2, "Error\n", 6);
+	exit(1);
+}
+void	ft_error_stack(char **arn, t_stack **stack)
+{
+	ft_free_stack(stack);
+	ft_free_split(arn);
 	exit(1);
 }

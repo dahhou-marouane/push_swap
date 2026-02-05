@@ -6,7 +6,7 @@
 /*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 00:16:11 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/01/27 02:28:44 by one              ###   ########.fr       */
+/*   Updated: 2026/02/04 23:00:25 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,17 @@ char	*ft_strjoin(char *s1, char *s2)
 	len2 = ft_strlen(s2);
 	p = malloc(len1 + len2 + 2);
 	if (!p)
-		ft_error();
+	{
+		if (s1)
+			free(s1);
+		exit(1);
+	}
 	ft_cat(p, s1);
 	if (s1)
-		{
-			p[len1] = ' ';
-			p[len1 + 1] = '\0';
-		}
+	{
+		p[len1] = ' ';
+		p[len1 + 1] = '\0';
+	}
 	ft_cat(p + ft_strlen(p), s2);
 	if (s1)
 		free(s1);

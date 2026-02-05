@@ -6,7 +6,7 @@
 /*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 02:53:26 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/03 12:04:34 by one              ###   ########.fr       */
+/*   Updated: 2026/02/05 16:02:55 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@
 
 typedef struct s_stack
 {
-	int				n;
+	int				num;
 	int				i;
+	int				position;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -34,13 +35,29 @@ void	ft_error(void);
 int		ft_isdigit(int c);
 size_t	ft_strlen(char *s);
 char	*ft_strjoin(char *s1, char *s2);
-int		ft_atoi(char *str);
+int		ft_atoi(char *str, int *error);
+void	ft_free_split(char **arr);
+void	ft_check_num(char **arn);
 
-// Stack functions
-t_stack	*ft_new_node(int n);
+// stack functions
+t_stack	*ft_new_node(int n, int i);
 void	ft_add_back(t_stack **stack, t_stack *new);
 t_stack	*ft_fill_stack(char **arn);
 void	ft_free_stack(t_stack **stack);
 int		ft_has_duplicate(t_stack *stack);
+void	ft_error_stack(char **arn, t_stack **stack);
+
+// stack operations
+void	ft_sa(t_stack **stack_a);
+void	ft_sb(t_stack **stack_b);
+void	ft_ss(t_stack **stack_a, t_stack **stack_b);
+void	ft_pa(t_stack **stack_a, t_stack **stack_b);
+void	ft_pb(t_stack **stack_a, t_stack **stack_b);
+void	ft_ra(t_stack **stack_a);
+void	ft_rb(t_stack **stack_b);
+void	ft_rr(t_stack **stack_a, t_stack **stack_b);
+void	ft_rra(t_stack **stack_a);
+void	ft_rrb(t_stack **stack_b);
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 #endif

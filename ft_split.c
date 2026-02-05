@@ -6,7 +6,7 @@
 /*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 21:58:42 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/03 06:30:39 by one              ###   ########.fr       */
+/*   Updated: 2026/02/05 16:01:33 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,20 @@ static void	ft_freei(char **a, size_t i)
 	while (j < i)
 		free(a[j++]);
 	free(a);
-	ft_error();
+	exit(1);
+}
+
+void	 ft_free_split(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }
 
 char	**ft_split(char *s, char c)
