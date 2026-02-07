@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/25 02:53:26 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/07 18:21:33 by one              ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -60,5 +48,12 @@ void	ft_rr(t_stack **stack_a, t_stack **stack_b);
 void	ft_rra(t_stack **stack_a);
 void	ft_rrb(t_stack **stack_b);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
+
+// sorting
+int		ft_stack_size(t_stack *stack);
+int		ft_is_sorted(t_stack *stack);
+void	ft_assign_index(t_stack *stack);
+void	ft_move_max_to_top(t_stack **stack_b);
+void	ft_chunk_sort(t_stack **stack_a, t_stack **stack_b);
 
 #endif

@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/25 02:31:57 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/07 18:11:40 by one              ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "push_swap.h"
 
@@ -35,7 +24,7 @@ int	main(int ac, char **av)
 {
 	char	**arn;
 	t_stack	*stack_a;
-	t_stack	*tmp;
+	t_stack	*stack_b;
 
 	if (ac == 1)
 		return (0);
@@ -43,12 +32,14 @@ int	main(int ac, char **av)
 	ft_check_num(arn);
 	stack_a = ft_fill_stack(arn);
 	ft_free_split(arn);
-	tmp = stack_a;
-	while (tmp)
+	stack_b = NULL;
+	if (ft_is_sorted(stack_a))
 	{
-		printf("Number: [%d]\n", tmp->num);
-		tmp = tmp->next;
+		ft_free_stack(&stack_a);
+		return (0);
 	}
+	ft_assign_index(stack_a);
+	ft_chunk_sort(&stack_a, &stack_b);
 	ft_free_stack(&stack_a);
 	return (0);
 }
