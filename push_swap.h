@@ -6,7 +6,7 @@
 /*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 02:53:26 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/05 16:02:55 by one              ###   ########.fr       */
+/*   Updated: 2026/02/07 18:21:33 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+//  parcing
 void	ft_emptystr(char *av);
 int		ft_validstr(char *av);
 char	**ft_split(char *s, char c);

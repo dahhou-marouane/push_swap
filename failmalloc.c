@@ -1,6 +1,10 @@
 // failmalloc.c
 #include <stdlib.h>
 void *malloc(size_t size) { return NULL; }
+
+
+
+
 // static int count = 0;
 
 // void *malloc(size_t size) {

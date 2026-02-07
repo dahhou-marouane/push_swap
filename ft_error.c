@@ -6,7 +6,7 @@
 /*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 16:13:08 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/04 22:49:25 by one              ###   ########.fr       */
+/*   Updated: 2026/02/06 21:45:08 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void	ft_error_stack(char **arn, t_stack **stack)
 {
 	ft_free_stack(stack);
 	ft_free_split(arn);
-	exit(1);
+	ft_error();
 }
