@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 static void	ft_cat(char *p, char *s)
 {
@@ -26,7 +26,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	{
 		if (s1)
 			free(s1);
-		exit(1);
+		return (NULL);
 	}
 	ft_cat(p, s1);
 	if (s1)

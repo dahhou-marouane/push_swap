@@ -6,7 +6,7 @@
 /*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 17:32:02 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/01/27 04:03:56 by one              ###   ########.fr       */
+/*   Updated: 2026/02/11 21:58:45 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,23 @@ int	ft_atoi(char *str, int *error)
 		i++;
 	}
 	return (res * sign);
+}
+
+void	ft_check_num(char **arn)
+{
+	int i;
+	int error;
+
+	i = 0;
+	error = 0;
+	while (arn[i])
+	{
+		ft_atoi(arn[i], &error);
+		if (error)
+		{
+			ft_free_split(arn);
+			ft_error();
+		}
+		i++;
+	}
 }

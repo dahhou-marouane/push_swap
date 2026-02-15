@@ -35,6 +35,12 @@ t_stack	*ft_fill_stack(char **arn);
 void	ft_free_stack(t_stack **stack);
 int		ft_has_duplicate(t_stack *stack);
 void	ft_error_stack(char **arn, t_stack **stack);
+int		ft_size_stack(t_stack *stack);
+// hard code sort
+void	ft_sort_two(t_stack **stack_a);
+void	ft_sort_tree(t_stack **stack_a);
+void	ft_sort_four(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_five(t_stack **stack_a, t_stack **stack_b);
 
 // stack operations
 void	ft_sa(t_stack **stack_a);
@@ -50,10 +56,6 @@ void	ft_rrb(t_stack **stack_b);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 // sorting
-int		ft_stack_size(t_stack *stack);
-int		ft_is_sorted(t_stack *stack);
-void	ft_assign_index(t_stack *stack);
-void	ft_move_max_to_top(t_stack **stack_b);
-void	ft_chunk_sort(t_stack **stack_a, t_stack **stack_b);
+
 
 #endif
