@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split_bonus.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/19 20:07:39 by mdahhou           #+#    #+#             */
+/*   Updated: 2026/02/19 20:07:40 by mdahhou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h"
 
 static size_t	ft_cw(char *s, char c)
@@ -65,7 +77,7 @@ static void	ft_freei(char **a, char *alln)
 	exit(1);
 }
 
-void	 ft_free_split(char **arr)
+void	ft_free_split(char **arr)
 {
 	int	i;
 

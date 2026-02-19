@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_r_rotate.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/19 20:07:31 by mdahhou           #+#    #+#             */
+/*   Updated: 2026/02/19 20:07:32 by mdahhou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_rra(t_stack **stack_a)
@@ -40,7 +52,7 @@ void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*last;
 
 	if (!*stack_b || !(*stack_b)->next || !*stack_a || !(*stack_a)->next)
-        return ;
+		return ;
 	prev = *stack_a;
 	while (prev->next->next)
 		prev = prev->next;

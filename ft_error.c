@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 16:13:08 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/06 21:45:08 by one              ###   ########.fr       */
+/*   Updated: 2026/02/19 20:10:55 by mdahhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_error(void)
 	write(2, "Error\n", 6);
 	exit(1);
 }
+
 void	ft_error_stack(char **arn, t_stack **stack)
 {
 	ft_free_stack(stack);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/19 20:08:39 by mdahhou           #+#    #+#             */
+/*   Updated: 2026/02/19 20:13:57 by mdahhou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -16,7 +28,7 @@ typedef struct s_stack
 }				t_stack;
 
 //  parcing
-void	ft_emptystr(char *av) ;
+void	ft_emptystr(char *av);
 int		ft_validstr(char *av);
 char	**ft_split(char *s, char c);
 char	**ft_parsing(int ac, char **av);
@@ -37,7 +49,6 @@ void	ft_free_stack(t_stack **stack);
 int		ft_has_duplicate(t_stack *stack);
 void	ft_error_stack(char **arn, t_stack **stack);
 int		ft_size_stack(t_stack *stack);
-
 
 // hard code sort
 void	ft_sort_two(t_stack **stack_a);
@@ -71,8 +82,10 @@ int		ft_minus_to_positive(int n);
 int		ft_cost_sum(int a, int b);
 void	ft_set_position(t_stack **stack);
 int		ft_totale_cost(t_stack *stack);
-void	ft_con_costs(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
-void	ft_do_costs(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
+void	ft_con_costs(t_stack **stack_a, t_stack **stack_b,
+			int *cost_a, int *cost_b);
+void	ft_do_costs(t_stack **stack_a, t_stack **stack_b,
+			int *cost_a, int *cost_b);
 void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_move_b_to_a(t_stack **stack_a, t_stack **stack_b);
 void	ft_algo(t_stack **stack_a, t_stack **stack_b);

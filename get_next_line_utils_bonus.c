@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/19 20:08:17 by mdahhou           #+#    #+#             */
+/*   Updated: 2026/02/19 20:08:18 by mdahhou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h"
 
 void	ft_strlcat_get(char *dst, char *src, size_t dstsize)
@@ -57,7 +69,7 @@ void	ft_free_gnl(char **store, char *buffer)
 {
 	free(*store);
 	*store = NULL;
-	free(buffer); 
+	free(buffer);
 }
 
 char	*ft_set_gnl_error(int *error, int value)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/19 20:08:36 by mdahhou           #+#    #+#             */
+/*   Updated: 2026/02/19 20:14:50 by mdahhou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
 
@@ -17,7 +29,6 @@ typedef struct s_stack_moves
 	char					*operation;
 	struct s_stack_moves	*next;
 }	t_stack_moves;
-
 
 // get_next_line
 # define BUFFER_SIZE 1
@@ -48,13 +59,13 @@ void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 // stack functions
 void	ft_success(int i);
 void	ft_do_moves(t_stack **stack_a, t_stack **stack_b, char *op);
-void    ft_free_stack(t_stack **stack);
+void	ft_free_stack(t_stack **stack);
 void	ft_error_stack(char **ar, t_stack **stack);
 void	ft_error(void);
 int		ft_is_valid_move(char *op);
 int		ft_strcmp(char *s1, char *s2);
 void	ft_add_back_moves(t_stack_moves **stack, t_stack_moves *new);
-void    ft_free_stack_moves(t_stack_moves **stack);
+void	ft_free_stack_moves(t_stack_moves **stack);
 void	ft_add_back(t_stack **stack, t_stack *new);
 int		ft_read_moves(t_stack_moves **stack_moves);
 void	ft_algo_moves(t_stack **stack_a, t_stack **stack_b);
@@ -64,9 +75,9 @@ int		ft_atoi(char *str, int *error);
 void	ft_check_num(char **arn);
 char	*ft_strjoin(char *s1, char *s2);
 char	**ft_parsing(int ac, char **av);
-t_stack *ft_fill_stack(char **arn);
+t_stack	*ft_fill_stack(char **arn);
 char	**ft_split(char *s, char c);
-void	 ft_free_split(char **arr);
+void	ft_free_split(char **arr);
 int		ft_has_false_move(t_stack_moves *stack);
 int		ft_fill_stack_moves(t_stack_moves **stack, char *move);
 #endif

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_algo.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/19 20:07:04 by mdahhou           #+#    #+#             */
+/*   Updated: 2026/02/19 20:10:26 by mdahhou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_set_position(t_stack **stack)
@@ -16,7 +28,9 @@ void	ft_set_position(t_stack **stack)
 		pos++;
 	}
 }
-void	ft_con_costs(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b)
+
+void	ft_con_costs(t_stack **stack_a, t_stack **stack_b, int *cost_a,
+		int *cost_b)
 {
 	while (*cost_a > 0)
 	{
@@ -29,7 +43,9 @@ void	ft_con_costs(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b
 		(*cost_b)--;
 	}
 }
-void	ft_do_costs(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b)
+
+void	ft_do_costs(t_stack **stack_a, t_stack **stack_b, int *cost_a,
+		int *cost_b)
 {
 	while ((*cost_a > 0) && (*cost_b > 0))
 	{
@@ -55,9 +71,10 @@ void	ft_do_costs(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b)
 	}
 	ft_con_costs(stack_a, stack_b, cost_a, cost_b);
 }
+
 int	ft_cheap_rotate_to_top(t_stack *stack, int size)
 {
-	int posit;
+	int	posit;
 	int	count;
 
 	count = 0;
@@ -75,17 +92,16 @@ int	ft_cheap_rotate_to_top(t_stack *stack, int size)
 		while (posit < size)
 		{
 			count--;
-			posit++;	
+			posit++;
 		}
 	}
 	return (count);
 }
-//////////////////////
 
 void	ft_set_cost_a(t_stack **stack)
 {
 	t_stack	*tmp;
-	int 	size;
+	int		size;
 
 	tmp = (*stack);
 	size = ft_size_stack(*stack);
@@ -95,10 +111,11 @@ void	ft_set_cost_a(t_stack **stack)
 		tmp = tmp->next;
 	}
 }
+
 void	ft_set_cost_b_in_b(t_stack **stack)
 {
 	t_stack	*tmp;
-	int 	size;
+	int		size;
 
 	tmp = (*stack);
 	size = ft_size_stack(*stack);
@@ -108,6 +125,7 @@ void	ft_set_cost_b_in_b(t_stack **stack)
 		tmp = tmp->next;
 	}
 }
+
 void	ft_set_cost_b(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
@@ -122,8 +140,8 @@ void	ft_set_cost_b(t_stack **stack_a, t_stack **stack_b)
 
 int	ft_get_cost_b(t_stack *stack, int num)
 {
-	int best_val;
-	int best_pos;
+	int	best_val;
+	int	best_pos;
 	int	size_b;
 	int	max_val;
 	int	max_pos;
@@ -155,6 +173,7 @@ int	ft_get_cost_b(t_stack *stack, int num)
 		return (best_pos);
 	return (best_pos - size_b);
 }
+
 void	ft_set_cost_a_in_b(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
@@ -169,8 +188,8 @@ void	ft_set_cost_a_in_b(t_stack **stack_a, t_stack **stack_b)
 
 int	ft_get_cost_a_in_b(t_stack *stack, int num)
 {
-	int best_val;
-	int best_pos;
+	int	best_val;
+	int	best_pos;
 	int	size_b;
 	int	min_val;
 	int	min_pos;
@@ -201,15 +220,13 @@ int	ft_get_cost_a_in_b(t_stack *stack, int num)
 	return (best_pos - size_b);
 }
 
-
-
-
 int	ft_minus_to_positive(int n)
 {
 	if (n < 0)
 		return (n * -1);
 	return (n);
 }
+
 int	ft_cost_sum(int a, int b)
 {
 	int	aa;
@@ -225,6 +242,7 @@ int	ft_cost_sum(int a, int b)
 	}
 	return (aa + bb);
 }
+
 int	ft_totale_cost(t_stack *stack)
 {
 	int	best;
@@ -247,13 +265,12 @@ int	ft_totale_cost(t_stack *stack)
 	return (pos);
 }
 
-
 void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
-	int	best_pos;
-	int	cost_a;
-	int	cost_b;
+	int		best_pos;
+	int		cost_a;
+	int		cost_b;
 
 	tmp = (*stack_a);
 	best_pos = -1;
@@ -271,13 +288,13 @@ void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b)
 	ft_do_costs(stack_a, stack_b, &cost_a, &cost_b);
 	ft_pb(stack_a, stack_b);
 }
-/////////////////////
+
 void	ft_move_b_to_a(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
-	int	best_pos;
-	int	cost_a;
-	int	cost_b;
+	int		best_pos;
+	int		cost_a;
+	int		cost_b;
 
 	tmp = (*stack_b);
 	best_pos = -1;

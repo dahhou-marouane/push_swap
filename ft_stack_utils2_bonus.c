@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_stack_utils2_bonus.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/19 20:07:50 by mdahhou           #+#    #+#             */
+/*   Updated: 2026/02/19 20:11:50 by mdahhou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h"
 
-static t_stack_moves *ft_new_node_moves(char *move)
+static t_stack_moves	*ft_new_node_moves(char *move)
 {
-	t_stack_moves *node;
+	t_stack_moves	*node;
 
 	node = malloc(sizeof(t_stack_moves));
 	if (!node)
@@ -11,9 +23,10 @@ static t_stack_moves *ft_new_node_moves(char *move)
 	node->next = NULL;
 	return (node);
 }
-void    ft_free_stack_moves(t_stack_moves **stack)
+
+void	ft_free_stack_moves(t_stack_moves **stack)
 {
-	t_stack_moves *tmp;
+	t_stack_moves	*tmp;
 
 	if (!stack || !*stack)
 		return ;
@@ -36,9 +49,10 @@ int	ft_strcmp(char *s1, char *s2)
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+
 void	ft_add_back_moves(t_stack_moves **stack, t_stack_moves *new)
 {
-	t_stack_moves *tmp;
+	t_stack_moves	*tmp;
 
 	if (!*stack)
 	{
@@ -51,10 +65,9 @@ void	ft_add_back_moves(t_stack_moves **stack, t_stack_moves *new)
 	tmp->next = new;
 }
 
-
 int	ft_fill_stack_moves(t_stack_moves **stack, char *move)
 {
-	t_stack_moves *new;
+	t_stack_moves	*new;
 
 	new = ft_new_node_moves(move);
 	if (!new)

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_stack_utils.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/19 20:07:47 by mdahhou           #+#    #+#             */
+/*   Updated: 2026/02/19 20:07:48 by mdahhou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-t_stack *ft_new_node(int num)
+t_stack	*ft_new_node(int num)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	node = malloc(sizeof(t_stack));
 	if (!node)
@@ -17,8 +29,8 @@ t_stack *ft_new_node(int num)
 
 int	ft_has_duplicate(t_stack *stack)
 {
-	t_stack *curent;
-	t_stack *against;
+	t_stack	*curent;
+	t_stack	*against;
 
 	curent = stack;
 	while (curent)
@@ -37,7 +49,7 @@ int	ft_has_duplicate(t_stack *stack)
 
 void	ft_add_back(t_stack **stack, t_stack *new)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!*stack)
 	{
@@ -50,9 +62,9 @@ void	ft_add_back(t_stack **stack, t_stack *new)
 	tmp->next = new;
 }
 
-void    ft_free_stack(t_stack **stack)
+void	ft_free_stack(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!stack || !*stack)
 		return ;
@@ -65,11 +77,11 @@ void    ft_free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-t_stack *ft_fill_stack(char **arn)
+t_stack	*ft_fill_stack(char **arn)
 {
-	size_t  i;
-	t_stack *new;
-	t_stack *stack;
+	size_t	i;
+	t_stack	*new;
+	t_stack	*stack;
 	int		error;
 
 	stack = NULL;

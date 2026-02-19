@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/19 20:08:20 by mdahhou           #+#    #+#             */
+/*   Updated: 2026/02/19 20:08:21 by mdahhou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h"
 
 int	ft_is_sorted(t_stack *stack_a, t_stack *stack_b)
@@ -35,7 +47,6 @@ int	main(int ac, char **av)
 {
 	char	**arn;
 	t_stack	*stack_a;
-
 	t_stack	*stack_b;
 
 	if (ac == 1)
