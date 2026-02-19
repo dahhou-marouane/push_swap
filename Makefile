@@ -3,19 +3,18 @@ NAME_BONUS = checker
 
 CFLAGS = -g -Wall -Wextra -Werror
 
-FILE_BONUS = ft_atoi_bonus.c ft_push_bonus.c ft_r_rotate_bonus.c \
-				ft_stack_utils_bonus.c ft_swap_bonus.c \
-				main_bonus.c push_swap_bonus.h ft_error_bonus.c ft_rotate_bonus.c \
-				ft_split_bonus.c ft_strjoin_bonus.c get_next_line_bonus.c get_next_line_utils_bonus.c \
-				parcing_bonus.c
+FILE_BONUS = ft_atoi_bonus.c ft_rotate_bonus.c ft_stack_utils_bonus.c ft_swap_bonus.c  \
+		ft_do_moves_bonus.c ft_r_rotate_bonus.c ft_strjoin_bonus.c get_next_line_bonus.c \
+		ft_error_bonus.c ft_split_bonus.c ft_strlen_bonus.c parcing_bonus.c \
+		ft_push_bonus.c ft_success_bonus.c get_next_line_utils_bonus.c main_bonus.c ft_stack_utils2_bonus.c 
 
 
 FILES_MAN = ft_error.c main.c parcing.c ft_strlen.c ft_strjoin.c \
-				ft_split.c ft_atoi.c ft_stack_utils.c ft_swap.c ft_rotate.c \
-				ft_r_rotate.c ft_push.c ft_hard_sort.c
+			ft_split.c ft_atoi.c ft_stack_utils.c ft_swap.c ft_rotate.c \
+			ft_r_rotate.c ft_push.c ft_hard_sort.c ft_algo.c
 
 OBJ_MAN = $(FILES_MAN:.c=.o)
-OBJ_BONUS = $(FILE_BONUS:_bonus.c=_bonus.o)
+OBJ_BONUS = $(FILE_BONUS:.c=.o)
 
 all : $(NAME_MAN)
 

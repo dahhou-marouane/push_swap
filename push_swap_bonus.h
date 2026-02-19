@@ -22,9 +22,9 @@ typedef struct s_stack_moves
 // get_next_line
 # define BUFFER_SIZE 1
 
-char	*get_next_line(int fd, int *error);
 char	*ft_strjoin_get(char *s1, char *s2);
 char	*ft_read_buffer_get(int fd, char **store, int *error);
+char	*get_next_line(int fd, int *error);
 char	*ft_strchr_get(char *s, char c);
 char	*ft_line_get(char *s);
 void	ft_strlcat_get(char *dst, char *src, size_t dstsize);

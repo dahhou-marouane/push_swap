@@ -46,7 +46,7 @@ static int	ft_get_smaller_pos(t_stack **stack)
 	while (tmp)
 	{
 		if (small > tmp->num)
-		{	
+		{
 			small = tmp->num;
 			posit = count;
 		}

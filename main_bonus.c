@@ -5,6 +5,8 @@ int	ft_is_sorted(t_stack *stack_a, t_stack *stack_b)
 	t_stack	*tmp;
 
 	tmp = stack_a;
+	if (!tmp)
+		return (stack_b == NULL);
 	while (tmp->next)
 	{
 		if (tmp->num > tmp->next->num)

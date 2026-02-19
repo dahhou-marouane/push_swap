@@ -105,7 +105,8 @@ void	ft_algo_moves(t_stack **stack_a, t_stack **stack_b)
 	if (!ft_read_moves(&stack_moves))
 	{
 		ft_free_stack(stack_a);
-		exit(1);
+		ft_free_stack(stack_b);
+		ft_error();
 	}
 	tmp_moves = stack_moves;
 	while (tmp_moves)

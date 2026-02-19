@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-t_stack *ft_new_node(int num, int i)
+t_stack *ft_new_node(int num)
 {
 	t_stack *node;
 
@@ -8,7 +8,8 @@ t_stack *ft_new_node(int num, int i)
 	if (!node)
 		return (NULL);
 	node->num = num;
-	node->i = i;
+	node->cost_a = 0;
+	node->cost_b = 0;
 	node->position = 0;
 	node->next = NULL;
 	return (node);
@@ -76,7 +77,7 @@ t_stack *ft_fill_stack(char **arn)
 	error = 0;
 	while (arn[i])
 	{
-		new = ft_new_node(ft_atoi(arn[i], &error), i);
+		new = ft_new_node(ft_atoi(arn[i], &error));
 		if (!new || error)
 			ft_error_stack(arn, &stack);
 		ft_add_back(&stack, new);
