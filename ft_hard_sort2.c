@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hard_sort2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 20:17:07 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/19 20:17:30 by mdahhou          ###   ########.fr       */
+/*   Updated: 2026/02/20 23:40:20 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_get_smaller_pos(t_stack **stack)
+int	ft_get_smaller_pos(t_stack **stack)
 {
 	int		posit;
 	int		small;
@@ -36,7 +36,7 @@ static int	ft_get_smaller_pos(t_stack **stack)
 	return (posit);
 }
 
-static void	ft_rotate_to_top(t_stack **stack_a, int posit)
+void	ft_rotate_to_top(t_stack **stack_a, int posit)
 {
 	int	size;
 

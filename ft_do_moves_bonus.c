@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_do_moves_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 20:07:11 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/19 20:07:12 by mdahhou          ###   ########.fr       */
+/*   Updated: 2026/02/22 01:19:30 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,8 @@ int	ft_read_moves(t_stack_moves **stack_moves)
 
 	gnl_error = 0;
 	*stack_moves = NULL;
-	while ((move = get_next_line(0, &gnl_error)) != NULL)
+	move = get_next_line(0, &gnl_error);
+	while (move)
 	{
 		if (gnl_error)
 		{

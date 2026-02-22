@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 20:07:47 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/19 20:07:48 by mdahhou          ###   ########.fr       */
+/*   Updated: 2026/02/22 00:04:20 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,14 @@ t_stack	*ft_fill_stack(char **arn)
 	while (arn[i])
 	{
 		new = ft_new_node(ft_atoi(arn[i], &error));
-		if (!new || error)
+		if (!new)
 			ft_error_stack(arn, &stack);
 		ft_add_back(&stack, new);
 		i++;
 	}
 	if (ft_has_duplicate(stack))
 		ft_error_stack(arn, &stack);
+	if (stack)
+		ft_change_num_to_idx(&stack);
 	return (stack);
 }

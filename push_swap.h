@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 20:08:39 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/19 20:13:57 by mdahhou          ###   ########.fr       */
+/*   Updated: 2026/02/22 01:06:32 by one              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_stack
 {
 	int				num;
+	int				idx;
 	int				position;
 	int				cost_a;
 	int				cost_b;
@@ -49,17 +50,17 @@ void	ft_free_stack(t_stack **stack);
 int		ft_has_duplicate(t_stack *stack);
 void	ft_error_stack(char **arn, t_stack **stack);
 int		ft_size_stack(t_stack *stack);
+void	ft_change_num_to_idx(t_stack **stack);
 
 // hard code sort
 void	ft_sort_two(t_stack **stack_a);
 void	ft_sort_tree(t_stack **stack_a);
 void	ft_sort_four(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_five(t_stack **stack_a, t_stack **stack_b);
-
+int		ft_get_smaller_pos(t_stack **stack);
+void	ft_rotate_to_top(t_stack **stack_a, int posit);
 // stack operations
 void	ft_sa(t_stack **stack_a);
-void	ft_sb(t_stack **stack_b);
-void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 void	ft_pa(t_stack **stack_a, t_stack **stack_b);
 void	ft_pb(t_stack **stack_a, t_stack **stack_b);
 void	ft_ra(t_stack **stack_a);
@@ -76,14 +77,12 @@ void	ft_set_cost_a(t_stack **stack);
 void	ft_set_cost_a_in_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_set_cost_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_set_cost_b_in_b(t_stack **stack);
-int		ft_get_cost_b(t_stack *stack, int num);
-int		ft_get_cost_a_in_b(t_stack *stack, int num);
+int	ft_get_cost_b(t_stack *stack, int num, int best_val, int max_val);
+int		ft_get_cost_a_in_b(t_stack *stack, int num, int best_val, int min_val);
 int		ft_minus_to_positive(int n);
 int		ft_cost_sum(int a, int b);
 void	ft_set_position(t_stack **stack);
 int		ft_totale_cost(t_stack *stack);
-void	ft_con_costs(t_stack **stack_a, t_stack **stack_b,
-			int *cost_a, int *cost_b);
 void	ft_do_costs(t_stack **stack_a, t_stack **stack_b,
 			int *cost_a, int *cost_b);
 void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b);
