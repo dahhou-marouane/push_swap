@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_move_a_to_b.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/22 01:50:25 by mdahhou           #+#    #+#             */
+/*   Updated: 2026/02/22 01:59:10 by mdahhou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b)
@@ -23,6 +35,7 @@ void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b)
 	ft_do_costs(stack_a, stack_b, &cost_a, &cost_b);
 	ft_pb(stack_a, stack_b);
 }
+
 void	ft_set_cost_a(t_stack **stack)
 {
 	t_stack	*tmp;
@@ -36,6 +49,7 @@ void	ft_set_cost_a(t_stack **stack)
 		tmp = tmp->next;
 	}
 }
+
 void	ft_set_cost_b(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
@@ -76,5 +90,5 @@ int	ft_get_cost_b(t_stack *stack, int num, int best_val, int max_val)
 	}
 	if (best_pos == -1)
 		best_pos = max_pos;
-	return (best_pos <= size_b / 2 ? best_pos : best_pos - size_b);
+	return (ft_best_pos(best_pos, size_b));
 }

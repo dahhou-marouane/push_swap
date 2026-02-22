@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: one <one@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdahhou <mdahhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 20:08:39 by mdahhou           #+#    #+#             */
-/*   Updated: 2026/02/22 01:06:32 by one              ###   ########.fr       */
+/*   Updated: 2026/02/22 01:59:54 by mdahhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	ft_set_cost_a(t_stack **stack);
 void	ft_set_cost_a_in_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_set_cost_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_set_cost_b_in_b(t_stack **stack);
-int	ft_get_cost_b(t_stack *stack, int num, int best_val, int max_val);
+int		ft_get_cost_b(t_stack *stack, int num, int best_val, int max_val);
 int		ft_get_cost_a_in_b(t_stack *stack, int num, int best_val, int min_val);
 int		ft_minus_to_positive(int n);
 int		ft_cost_sum(int a, int b);
@@ -88,5 +88,6 @@ void	ft_do_costs(t_stack **stack_a, t_stack **stack_b,
 void	ft_move_a_to_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_move_b_to_a(t_stack **stack_a, t_stack **stack_b);
 void	ft_algo(t_stack **stack_a, t_stack **stack_b);
+int		ft_best_pos(int best_pos, int size_b);
 
 #endif
